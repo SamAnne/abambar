@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Abambar" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="h-full">
+  <div class="border-y border-1"></div>
+    <div id="home" class="mt-15 items-end h-svh flex justify-center bg-no-repeat bg-cover bg-center text-white" style="background-image: url('<%= asset_path('boba.jpg') %>')">
+      <div class="py-50 text-center space-y-4 ">
+        <h1 class="text-4xl font-bold rounded-full font-serif font-light">New <span class="font-normal underline">specials</span> every week!</h1>
+        <p class="w-2/5 mx-auto text-base/5">Sip into happiness with our daily boba specials. Check back often — our flavors rotate and surprises are always brewing</p>
+        <button class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-[#f58da6] px-6 font-medium text-neutral-200 duration-500"><div class="translate-y-0 opacity-100 transition group-hover:-translate-y-[150%] group-hover:opacity-0">View our Menu</div><div class="absolute translate-y-[150%] opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"><path d="M7.5 2C7.77614 2 8 2.22386 8 2.5L8 11.2929L11.1464 8.14645C11.3417 7.95118 11.6583 7.95118 11.8536 8.14645C12.0488 8.34171 12.0488 8.65829 11.8536 8.85355L7.85355 12.8536C7.75979 12.9473 7.63261 13 7.5 13C7.36739 13 7.24021 12.9473 7.14645 12.8536L3.14645 8.85355C2.95118 8.65829 2.95118 8.34171 3.14645 8.14645C3.34171 7.95118 3.65829 7.95118 3.85355 8.14645L7 11.2929L7 2.5C7 2.22386 7.22386 2 7.5 2Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
+      </div>
+    </div>
+
+    <main class="containerflex h-full mx-auto justify-center" >
+      <%= render "layouts/navbar" %>
+      <%= yield %>
+    </main>
+  </body>
+</html>
