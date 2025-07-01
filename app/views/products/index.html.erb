@@ -5,6 +5,16 @@
       <p class="w-1/3 mx-auto text-base/5">There’s something for every taste and craving. Every cup is made fresh, just the way you like it!</p>
     </div>
   
+    <%# define method %>
+      <% def price_blocks(price_sm:, price_md:, price_lg:) %>
+        <div class="">$<%= price_sm %></div>
+        <div class="">$<%= price_md %></div>
+        <div class="">$<%= price_lg %></div>
+      <% end %>
+
+
+
+
     <div class="flex flex-row">
       <div class="size-50 grid grid-cols-6 gap-0 text-center backdrop-blur-sm bg-[#a56873]/70 rounded-r-4xl w-[55%] py-12 mb-10 text-white shadow-2xl">
         <div class="col-span-3 text-xl text-[#ffcadf]">Classic Series</div>
@@ -12,11 +22,11 @@
         <div class="">MD</div>
         <div class="">LG</div>
         <div class="col-span-3">Classic Milk Tea</div>
-        <%= render 'products/price', price_sm: 3.99, price_md: 4.99, price_lg: 5.99 %>
+        <% price_blocks(price_sm: 3.99, price_md: 4.99, price_lg: 5.99) %>
         <div class="col-span-3">♥ Thai Milk Tea</div>
-        <%= render 'products/price', price_sm: 3.99, price_md: 4.99, price_lg: 5.99 %>
+        <% price_blocks(price_sm: 3.99, price_md: 4.99, price_lg: 5.99) %>
         <div class="col-span-3">Taro Milk Tea</div>
-        <%= render 'products/price', price_sm: 3.99, price_md: 4.99, price_lg: 5.99 %>
+        <% price_blocks(price_sm: 3.99, price_md: 4.99, price_lg: 5.99) %>
       </div>
       <div class="relative grow mx-8 mb-8 size-50">
         <%= image_tag("milktea", {:class => "relative z-10 w-full h-full object-contain"}) %>
@@ -33,11 +43,11 @@
         <div class="">MD</div>
         <div class="">LG</div>
         <div class="col-span-3">Passionfruit Green Tea</div>
-        <%= render 'products/price', price_sm: 3.99, price_md: 4.99, price_lg: 5.99 %>
+        <% price_blocks(price_sm: 3.99, price_md: 4.99, price_lg: 5.99) %>
         <div class="col-span-3">Mango Black Tea</div>
-        <%= render 'products/price', price_sm: 3.99, price_md: 4.99, price_lg: 5.99 %>
+        <% price_blocks(price_sm: 3.99, price_md: 4.99, price_lg: 5.99) %>
         <div class="col-span-3">Lychee Oolong Tea</div>
-        <%= render 'products/price', price_sm: 3.99, price_md: 4.99, price_lg: 5.99 %>
+        <% price_blocks(price_sm: 3.99, price_md: 4.99, price_lg: 5.99) %>
       </div>
     </div>
     <div class="flex flex-row">
@@ -47,11 +57,11 @@
         <div class="">MD</div>
         <div class="">LG</div>
         <div class="col-span-3">Brown Sugar Boba Milk</div>
-        <%= render 'products/price', price_sm: 3.99, price_md: 4.99, price_lg: 5.99 %>
+        <% price_blocks(price_sm: 3.99, price_md: 4.99, price_lg: 5.99) %>
         <div class="col-span-3">Strawberry Matcha Latte</div>
-        <%= render 'products/price', price_sm: 3.99, price_md: 4.99, price_lg: 5.99 %>
+        <% price_blocks(price_sm: 3.99, price_md: 4.99, price_lg: 5.99) %>
         <div class="col-span-3">Honeydew Slush</div>
-        <%= render 'products/price', price_sm: 3.99, price_md: 4.99, price_lg: 5.99 %>
+        <% price_blocks(price_sm: 3.99, price_md: 4.99, price_lg: 5.99) %>
       </div>
       <div class="relative grow mx-8 size-50">
         <%= image_tag("strawberry", {:class => "relative z-10 w-full h-full object-contain"}) %>
